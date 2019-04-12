@@ -1,0 +1,47 @@
+﻿@Model
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="login-form">
+        <form asp-action="Home" asp-controller="Login" method="post">
+            <h2 class="text-center">Sistema Hotel</h2>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" asp-validation-for="" placeholder="E-mail" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="Senha" placeholder="Senha" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary login-btn btn-block">Entrar</button>
+            </div>
+            <div class="clearfix">
+                <label class="pull-left checkbox-inline"><input type="checkbox"> Lembrar acesso</label>
+                <a href="#" class="pull-right">Esqueceu a senha?</a>
+            </div>
+
+        </form>
+        <p class="text-center text-muted small">Não Pussui uma contra? <a href="#">Crie aqui!</a></p>
+    </div>
+</body>
+</html>
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/login.css" rel="stylesheet" />
+
+

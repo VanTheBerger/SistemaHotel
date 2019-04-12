@@ -1,0 +1,97 @@
+﻿@model CadastroViewModel
+@*
+
+*@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="container">
+
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Cadastro</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+            </div>
+            <div class="panel-body">
+
+
+
+                <form asp-controller="Cliente" asp-action="Create" method="post">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField"> Nome</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md  textinput textInput form-control" asp-for="Nome" maxlength="30" name="Nome" placeholder="Digite seu nome" style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField"> Email</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md  textinput textInput form-control" asp-for="Email" maxlength="30" name="Email" placeholder="Digite seu e-mail" style="margin-bottom: 10px" type="email" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_password1" class="form-group required">
+                        <label for="id_password1" class="control-label col-md-4  requiredField">Senha</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" asp-for="Senha" name="Senha" placeholder="Crie uma senha" style="margin-bottom: 10px" type="password" />
+                        </div>
+                    </div>
+                    <div id="div_id_password2" class="form-group required">
+                        <label for="id_password2" class="control-label col-md-4  requiredField">Confirma Senha</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" asp-for="Senha" name="Senha" placeholder="Confirme sua senha" style="margin-bottom: 10px" type="password" />
+                        </div>
+                    </div>
+
+
+                    <div id="div_id_company" class="form-group required">
+                        <label for="id_company" class="control-label col-md-4  requiredField">Estado</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" asp-for="Estado" name="Estado" placeholder="Digite o estado" style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_company" class="form-group required">
+                        <label for="id_company" class="control-label col-md-4  requiredField">Cidade</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" asp-for="Cidade" name="Cidade" placeholder="Digite a cidade" style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_number" class="form-group required">
+                        <label for="id_number" class="control-label col-md-4  requiredField">Telefone</label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" asp-for="Telefone" name="Telefone" placeholder="Digite seu telefone" style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_gender" class="form-group required">
+                        <label ofr="id_gender" class="control-label col-md-4  requiredField"> Género</label>
+                        <div class="controls col-md-8 " style="margin-bottom: 10px">
+                            <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="M" style="margin-bottom: 10px">Masculino</label>
+                            <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="F" style="margin-bottom: 10px">Feminino </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="aab controls col-md-4 "></div>
+                        <div class="controls col-md-8 ">
+                            <input type="submit" name="Cadastrar" value="Create" class="btn btn-primary btn btn-info" id="submit-id-signup" />
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
