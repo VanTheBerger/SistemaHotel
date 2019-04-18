@@ -48,7 +48,7 @@
         .signup-form h2:after {
             right: 0;
         }
-    /* Crie sua conta. É gratis...*/
+        /* Crie sua conta. É gratis...*/
     .signup-form .hint-text {
         color: #999;
         margin-bottom: 30px;
@@ -104,3 +104,5 @@
         .signup-form form a:hover {
             text-decoration: underline;
         }
+
+

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebSistemaHotel.Models;
 using WebSistemaHotel.Repositories;
@@ -19,17 +16,11 @@ namespace WebSistemaHotel.Controllers
          
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         //GET
         public IActionResult Create()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CadastroViewModel cadastro)
@@ -50,16 +41,14 @@ namespace WebSistemaHotel.Controllers
 
                 await db.AddCadastro(model);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             return View(cadastro);
 
         }
-
-        public IActionResult Cadastrados()
+        public IActionResult Index()
         {
             return View();
-
         }
     }
 }

@@ -1,90 +1,47 @@
 ﻿@model WebSistemaHotel.Models.CadastroModel
-@{
-    ViewData["Title"] = "Create";
-}
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/css/cadastro.css" rel="stylesheet" />
+</head>
 
-
-<div class="container">
-
-    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="panel-title">Cadastro</div>
-                <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+<body>
+    <div class="signup-form">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="danger"></div>
+            <h2>Cadastro</h2>
+            <p class="hint-text">Crie sua conta. É grátis e leva apenas um minuto.</p>
+            <div class="form-group">
+                <input class="input-md  textinput textInput form-control" asp-for="Nome" maxlength="30" name="Nome" placeholder="Digite seu nome" style="margin-bottom: 10px" type="text" />
             </div>
-            <div class="panel-body">
-
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
-                    <div id="div_id_username" class="form-group required">
-                        <label for="id_username" class="control-label col-md-4  requiredField"> Nome</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md  textinput textInput form-control" asp-for="Nome" maxlength="30" name="Nome" placeholder="Digite seu nome" style="margin-bottom: 10px" type="text" />
-                        </div>
-                    </div>
-
-                    <div id="div_id_username" class="form-group required">
-                        <label for="id_username" class="control-label col-md-4  requiredField"> Email</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md  textinput textInput form-control" asp-for="Email" maxlength="30" name="Email" placeholder="Digite seu e-mail" style="margin-bottom: 10px" type="email" />
-                        </div>
-                    </div>
-                    <div id="div_id_password1" class="form-group required">
-                        <label for="id_password1" class="control-label col-md-4  requiredField">Senha</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" asp-for="Senha" name="Senha" placeholder="Crie uma senha" style="margin-bottom: 10px" type="password" />
-                        </div>
-                    </div>
-                    <div id="div_id_password2" class="form-group required">
-                        <label for="id_password2" class="control-label col-md-4  requiredField">Confirma Senha</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" asp-for="Senha" name="Senha" placeholder="Confirme sua senha" style="margin-bottom: 10px" type="password" />
-                        </div>
-                    </div>
-
-                    <div id="div_id_company" class="form-group required">
-                        <label for="id_company" class="control-label col-md-4  requiredField">Estado</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" asp-for="Estado" name="Estado" placeholder="Digite o estado" style="margin-bottom: 10px" type="text" />
-                        </div>
-                    </div>
-                    <div id="div_id_company" class="form-group required">
-                        <label for="id_company" class="control-label col-md-4  requiredField">Cidade</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" asp-for="Cidade" name="Cidade" placeholder="Digite a cidade" style="margin-bottom: 10px" type="text" />
-                        </div>
-                    </div>
-                    <div id="div_id_number" class="form-group required">
-                        <label for="id_number" class="control-label col-md-4  requiredField">Telefone</label>
-                        <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" asp-for="Telefone" name="Telefone" placeholder="Digite seu telefone" style="margin-bottom: 10px" type="text" />
-                        </div>
-                    </div>
-                    <div id="div_id_gender" class="form-group required">
-                        <label ofr="id_gender" class="control-label col-md-4  requiredField"> Género</label>
-                        <div class="controls col-md-8 " style="margin-bottom: 10px">
-                            <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="M" style="margin-bottom: 10px">Masculino</label>
-                            <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="F" style="margin-bottom: 10px">Feminino </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="aab controls col-md-4 "></div>
-                        <div class="controls col-md-8 ">
-                            <input type="submit" value="Create" class="btn btn-sm btn-primary"/>
-                            <a asp-action="Cadastrados" class="btn btn-sm btn-success">Voltar para o Menu</a>
-
-                        </div>
-                    </div>
-
-                </form>
-
+            <div class="form-group">
+                <input type="email" class="form-control" asp-for="Email" placeholder="Email">
             </div>
-        </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6"><input type="text" class="form-control" asp-for="Estado" placeholder="Estado"></div>
+                    <div class="col-xs-6"><input type="text" class="form-control" asp-for="Cidade" placeholder="Cidade"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" asp-for="Telefone" placeholder="Telefone">
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6"><input type="password" class="form-control" asp-for="Senha" placeholder="Senha"></div>
+                    <div class="col-xs-6"><input type="password" class="form-control" asp-for="Senha" placeholder="Confirmar senha"></div>
+                </div>     
+            </div>    
+            <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="M" style="margin-bottom: 10px">Masculino</label>
+                <label class="radio-inline"> <input type="radio" name="Sexo" asp-for="Sexo" value="F" style="margin-bottom: 10px">Feminino </label>
+            </div>
+            <h1></h1>
+            <div class="form-group">
+                <button type="submit"  asp-action="Create" class="btn btn-success btn-lg btn-block">Registrar agora</button>
+            </div>
+        </form>
+        <div class="text-center">Já tem uma conta? <a href="#">Entre aqui!</a></div>
     </div>
-</div>
-
+</body>
+</html>     

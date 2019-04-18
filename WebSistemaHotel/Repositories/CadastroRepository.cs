@@ -16,23 +16,23 @@ namespace WebSistemaHotel.Repositories
         public CadastroRepository(CadastroContext _db )
         {
             db = _db;
-            db.Cadastros.Load();   
+            db.Cadastro.Load();   
         }
 
         public System.ComponentModel.BindingList<CadastroModel> GetAllCadastros()
         {
-            return db.Cadastros.Local.ToBindingList();
+            return db.Cadastro.Local.ToBindingList();
         }
 
         public async Task<bool>  AddCadastro(CadastroModel cadastro)
         {
-            db.Cadastros.Add(cadastro);
+            db.Cadastro.Add(cadastro);
            return await db.SaveChangesAsync() >0;
         }
 
         public CadastroModel GetCadastro(int id)
         {
-            return db.Cadastros.Where(b => b.Id.Equals(id)).First();
+            return db.Cadastro.Where(b => b.Id.Equals(id)).First();
         }
 
         public void UpdateCadastro(CadastroViewModel cadastroViewModel)
@@ -52,7 +52,7 @@ namespace WebSistemaHotel.Repositories
         }
         public void DeleteCadastro(int id)
         {
-            db.Cadastros.Remove(GetCadastro(id));
+            db.Cadastro.Remove(GetCadastro(id));
             db.SaveChanges();
 
         }

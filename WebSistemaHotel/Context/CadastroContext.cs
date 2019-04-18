@@ -9,6 +9,6 @@ namespace WebSistemaHotel.Context
 
         }
 
-        public DbSet<CadastroModel> Cadastros { get; set; }
+        public DbSet<CadastroModel> Cadastro { get; set; }
     }
 }
